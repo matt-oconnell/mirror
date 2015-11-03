@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Socket: Output</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="styles/styles.css">
+        <style>
+            #target { padding: 100px; background: orangered; width: 100px; border-radius: 50%; }
+        </style>
+	</head>
+
+	<body>
+
+        <div id="target"></div>
+
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+        <script>
+            var socket = io();
+            var target = $('#target');
+            socket.on('coords', function(coords) {
+                target.css({
+                    'margin-left': coords[0] + 'px',
+                    'margin-top': coords[1] + 'px'
+                });
+            });
+        </script>
+
+	</body>
+</html>

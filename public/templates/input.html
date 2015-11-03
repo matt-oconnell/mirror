@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Socket: Input</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="styles/styles.css">
+        <style>
+            #draggable { padding: 100px; background: darkseagreen; color: white; width: 100px; border-radius: 50%; }
+        </style>
+	</head>
+
+	<body>
+
+        <div id="draggable" class="ui-widget-content"></div>
+
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+        <script>
+            var socket = io();
+
+            $(function() {
+                $("#draggable").draggable({
+                    drag: function() {
+                        var offset = $(this).offset();
+                        var xPos = offset.left;
+                        var yPos = offset.top;
+                        socket.emit('coords', [xPos, yPos]);
+                    }
+                });
+            });
+
+        </script>
+
+	</body>
+</html>
