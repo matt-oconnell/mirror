@@ -7,11 +7,20 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="styles/styles.css">
         <style>
-            #draggable { background: darkseagreen; color: white; width: 50px; height: 50px; border-radius: 50%; }
+            body {
+                width: 100%;
+            }
+            .wheel {
+                width: 50%;
+                margin: 0 auto;
+                display: block;
+            }
         </style>
 	</head>
 
 	<body>
+
+    <img src="img/wheel.jpg" class="wheel">
 
 	<p></p>
 
@@ -21,7 +30,9 @@
         <script>
             var socket = io();
             socket.on('orient', function(orient) {
-                $('body p').html(orient.absolute+'<br><br>'+orient.alpha+'<br><br>'+orient.beta+'<br><br>'+orient.gamma);
+                var deg = Math.round( orient.alpha * 10 ) / 10;
+                $('.wheel').css('transform', 'rotate(' + deg + 'deg)');
+//                $('body p').html(orient.absolute+'<br><br>'+orient.alpha+'<br><br>'+orient.beta+'<br><br>'+orient.gamma);
             });
         </script>
 
