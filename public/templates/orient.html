@@ -28,10 +28,15 @@
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 
         <script>
+            // z = alpha
+            // x = beta
             var socket = io();
             socket.on('orient', function(orient) {
-                var deg = Math.round( orient.alpha * 10 ) / 10;
-                $('.wheel').css('transform', 'rotate(' + deg + 'deg)');
+                var z = Math.round( orient.alpha * 10 ) / 10;
+                var x = Math.round( orient.beta * 10 ) / 10;
+                $('.wheel').css({
+                    'transform': 'rotateZ(' + z + 'deg) rotateX(' + x + 'deg)'
+                });
 //                $('body p').html(orient.absolute+'<br><br>'+orient.alpha+'<br><br>'+orient.beta+'<br><br>'+orient.gamma);
             });
         </script>
