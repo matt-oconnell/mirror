@@ -42,7 +42,7 @@
             <entry file="file://$PROJECT_DIR$/public/templates/orient.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.6412729">
-                  <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+                  <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -399,7 +399,7 @@
     <entry file="file://$PROJECT_DIR$/public/templates/orient.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6412729">
-          <caret line="34" column="68" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="68" />
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding />
         </state>
       </provider>

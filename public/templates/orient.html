@@ -32,7 +32,7 @@
             // x = beta
             var socket = io();
             socket.on('orient', function(orient) {
-                var z = (Math.round( orient.alpha * 10 ) / 10) - 180;
+                var z = 360 - (Math.round( orient.alpha * 10 ) / 10);
                 var x = Math.round( orient.beta * 10 ) / 10;
                 $('.wheel').css({
                     'transform': 'rotateZ(' + z + 'deg) rotateX(' + x + 'deg)'
