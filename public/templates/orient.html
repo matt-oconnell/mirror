@@ -32,15 +32,12 @@
             // x = beta
             var socket = io();
             socket.on('orient', function(orient) {
-                var z = - (Math.round( orient.alpha * 10 ) / 10) + 90;
-                console.log(z);
-//                z = z < -180 ? 180 - z : z;
-                var x =  - (Math.round( orient.beta * 10 ) / 10);
-                console.log(x);
+                var z = - (Math.round( orient.alpha * 10 ) / 10);
+                var x = - (Math.round( orient.beta * 10 ) / 10);
+                var y = - (Math.round( orient.gamma * 10 ) / 10);
                 $('.wheel').css({
-                    'transform': 'rotateZ(' + z + 'deg) rotateX(' + x + 'deg)'
+                    'transform': 'rotateZ(' + z + 'deg) rotateX(' + x + 'deg)' + ' rotateY(' + y + ')'
                 });
-//                $('body p').html(orient.absolute+'<br><br>'+orient.alpha+'<br><br>'+orient.beta+'<br><br>'+orient.gamma);
             });
         </script>
 
