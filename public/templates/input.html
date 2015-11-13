@@ -24,6 +24,7 @@
             var socket = io();
 
             $(function() {
+
                 $("#draggable").draggable({
                     drag: function() {
                         var offset = $(this).offset();
@@ -32,6 +33,18 @@
                         socket.emit('coords', [xPos, yPos]);
                     }
                 });
+
+                window.addEventListener("deviceorientation", handleOrientation, true);
+                function handleOrientation(event) {
+                    var orient = {
+                        absolute: event.absolute,
+                        alpha: event.alpha,
+                        beta: event.beta,
+                        gamma: event.gamma
+                    };
+
+                    socket.emit('orient', orient);
+                }
             });
 
         </script>
