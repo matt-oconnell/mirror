@@ -33,7 +33,7 @@
             var socket = io();
             socket.on('orient', function(orient) {
                 var z = 360 - (Math.round( orient.alpha * 10 ) / 10);
-                var x = 360 - (Math.round( orient.gamma * 10 ) / 10);
+                var x = - (360 - (Math.round( orient.gamma * 10 ) / 10));
                 $('.wheel').css({
                     'transform': 'rotateZ(' + z + 'deg) rotateX(' + x + 'deg)'
                 });
